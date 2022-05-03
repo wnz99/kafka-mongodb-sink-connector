@@ -1,0 +1,15 @@
+{
+    "name": "mongo-sink-2",
+    "config": {
+        "connector.class": "com.mongodb.kafka.connect.MongoSinkConnector",
+        "tasks.max": "1",
+        "topics": "product.events",
+        "connection.uri": "mongodb://mongo1:27017,mongo2:27017,mongo3:27017",
+        "database": "mydb",
+        "collection": "products-2",
+        "key.converter": "org.apache.kafka.connect.storage.StringConverter",
+        "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+        "value.converter.schemas.enable": "false",
+        "errors.tolerance": "all"
+    }
+}
