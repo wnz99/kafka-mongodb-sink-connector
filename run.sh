@@ -37,6 +37,11 @@ echo "Create connector 2"
 curl -X POST -H "Content-Type: application/json" -d @sink-connector-2.json http://localhost:8084/connectors | jq
 curl http://localhost:8084/connectors/mongo-sink-2/status | jq
 
+echo "Create connector 3"
+
+curl -X POST -H "Content-Type: application/json" -d @sink-connector-3.json http://localhost:8084/connectors | jq
+curl http://localhost:8084/connectors/mongo-sink-3/status | jq
+
 echo "Create Kafka topic product.events"
 
 docker exec broker kafka-topics --zookeeper zookeeper:2181 --create --topic product.events --partitions 1 --replication-factor 1

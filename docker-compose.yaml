@@ -160,6 +160,15 @@ services:
       - "27019:27017"
     restart: unless-stopped
 
+# MongoDB sigle instance
+  mongo4:
+    image: mongo
+    restart: unless-stopped
+    ports:
+      - 27020:27017
+
+
+
 volumes:
   rs1:
   rs2:
